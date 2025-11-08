@@ -1,0 +1,30 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+}
+
+.body {
+    margin: auto;
+    max-width: 900px;
+    color: #000000;
+    background-image: url("currency_converter_background.jpg");
+    font: 25px/2 'Oswald', sans-serif;
+    padding: 10px;
+}
+
+.currency__name {
+    margin: 10px;
+}
+
