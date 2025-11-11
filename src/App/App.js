@@ -2,7 +2,8 @@ import Task from "./Task";
 import React, { useState } from 'react';
 import { Form } from "./Form";
 import { currencies } from "./currencies";
-
+import { Clock } from "./Clock";
+import { Header } from "./Header";
 
 function App() {
 
@@ -21,7 +22,11 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div className="App">
+      <Header
+        title="Zamiana walut"
+      />
+      <Clock />
       <Form
         result={result}
         calculateResult={calculateResult}

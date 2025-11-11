@@ -20,6 +20,10 @@ html {
     max-width: 900px;
     color: #000000;
     background-image: url("currency_converter_background.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    flex-direction: column;
     font: 25px/2 'Oswald', sans-serif;
     padding: 10px;
 }
