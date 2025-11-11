@@ -5,6 +5,7 @@
     padding: 10px;
     width: auto;
     margin: 10px;
+    border-radius: 5px;
 }
 
 .button:hover {
@@ -37,7 +38,6 @@
 .form__section--title {
     margin: 10px;
 }
-
 
 .form__title {
     padding: 0;

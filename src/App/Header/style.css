@@ -5,4 +5,5 @@
     color: rgb(189, 151, 80);
     text-shadow: 2px 3px 3px #888;
     background-color: rgba(1, 1, 1, 0.801);
+    border-radius: 10px;
 }
