@@ -1,5 +1,4 @@
-import Task from "./Task";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Form } from "./Form";
 import { currencies } from "./currencies";
 import { Clock } from "./Clock";
