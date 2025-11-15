@@ -11,7 +11,7 @@ export const StyledForm = styled.div`
     font-weight: bold;
     font-size: 25px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 100%;
     margin: 5px;
 }
