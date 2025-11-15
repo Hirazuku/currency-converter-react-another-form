@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
+import {theme} from "../theme";
 
 export const StyledApp = styled.div`
-    background-color:rgb(240, 240, 240);
-    border-color: rgb(0, 0, 0);;
+    background-color: ${({ theme }) => theme.colors.white};
+    border-color: ${({ theme }) => theme.colors.black};
     border-radius: 5px
 `

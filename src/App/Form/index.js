@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-import { StyledForm, FormTitle, FormField, FormSelect, FormButton } from "./styled";
+import { StyledForm, FormTitle, FormField, FormButton } from "./styled";
 
 export const Form = ({ calculateResult, result }) => {
 
@@ -26,7 +26,8 @@ export const Form = ({ calculateResult, result }) => {
                     type="number"
                     onChange={({ target }) => setAmount(target.value)}
                     placeholder="Wpisz kwotę: " />
-                <FormSelect
+                <FormField
+                as="select"
                     value={currency}
                     onChange={({ target }) => setCurrency(target.value)}
                 >
@@ -37,7 +38,7 @@ export const Form = ({ calculateResult, result }) => {
                             {currency.name}
                         </option>
                     )))}
-                </FormSelect>
+                </FormField>
                 <FormButton>Przelicz</FormButton>
             </form>
 

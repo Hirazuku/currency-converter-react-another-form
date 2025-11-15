@@ -11,7 +11,7 @@ export const StyledForm = styled.div`
     font-weight: bold;
     font-size: 25px;
 
-    @media(max-width: 767px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 100%;
     margin: 5px;
 }
@@ -22,9 +22,9 @@ export const FormTitle = styled.p`
 `
 
 export const FormField = styled.input`
-    color: rgb(0, 0, 0);
+    color: ${({ theme }) => theme.colors.black};
     padding: 5px;
-    border: 2px solid rgba(109, 77, 8, 0.555);
+    border: 2px solid ${({ theme }) => theme.colors.antiqueBronze};
     border-radius: 5px;
     width: 70%;
     max-width: 70%;
@@ -32,9 +32,9 @@ export const FormField = styled.input`
 `
 
 export const FormSelect = styled.select`
-    color: rgb(0, 0, 0);
+    color: ${({ theme }) => theme.colors.black};
     padding: 0px;
-    border: 2px solid rgba(109, 77, 8, 0.555);
+    border: 2px solid ${({ theme }) => theme.colors.antiqueBronze};
     border-radius: 5px;
     width: 80px;
     max-width: 80%;
@@ -42,8 +42,8 @@ export const FormSelect = styled.select`
 `
 
 export const FormButton = styled.button`
-    color: rgb(255, 255, 255);
-    background-color:hsl(180, 100%, 25%);
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.teal};
     border: none;
     padding: 10px;
     width: auto;
@@ -51,8 +51,8 @@ export const FormButton = styled.button`
     border-radius: 5px;
 
     &:hover{
-        color: rgb(241, 232, 211);
-        background-color: hsl(180, 100%, 40%);
+        color: ${({ theme }) => theme.colors.white};
+        background-color: ${({ theme }) => theme.colors.brightTeal};
         transition: 0.3s;
         transform: scale(1.1);
     }
