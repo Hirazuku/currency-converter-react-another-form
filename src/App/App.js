@@ -3,6 +3,8 @@ import { Form } from "./Form";
 import { currencies } from "./currencies";
 import { Clock } from "./Clock";
 import { Header } from "./Header";
+import { StyledApp } from "./styled";
+import styled, { css } from "styled-components";
 
 function App() {
 
@@ -21,16 +23,16 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header
-        title="Zamiana walut"
-      />
-      <Clock />
-      <Form
-        result={result}
-        calculateResult={calculateResult}
-      />
-    </div>
+      <StyledApp>
+        <Header
+          title="Zamiana walut"
+        />
+        <Clock />
+        <Form
+          result={result}
+          calculateResult={calculateResult}
+        />
+      </StyledApp>
   );
 }
 

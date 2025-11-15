@@ -1,8 +1,7 @@
-import "./style.css";
 import React, { useState } from 'react';
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-
+import { StyledForm, FormTitle, FormField, FormSelect, FormButton } from "./styled";
 
 export const Form = ({ calculateResult, result }) => {
 
@@ -16,40 +15,39 @@ export const Form = ({ calculateResult, result }) => {
 
     return (
         <>
-            <div className="form__grid form__title form--biggerGap">
+            <StyledForm>
                 Policz wartość:
-            </div>
+            </StyledForm>
 
-            <p className="form__section--title">Podaj kwotę do przeliczenia w PLN</p>
+            <FormTitle>Podaj kwotę do przeliczenia w PLN</FormTitle>
 
             <form onSubmit={onFormSubmit}>
-                <input
-                    className="form__field"
+                <FormField
                     type="number"
                     onChange={({ target }) => setAmount(target.value)}
                     placeholder="Wpisz kwotę: " />
-                <select
-                    className="form__select"
+                <FormSelect
                     value={currency}
                     onChange={({ target }) => setCurrency(target.value)}
                 >
                     {currencies.map((currency => (
-                            <option
+                        <option
                             key={currency.short}
                             value={currency.short}>
-                                {currency.name}
-                            </option>
+                            {currency.name}
+                        </option>
                     )))}
-                </select>
-                <button className="button">Przelicz</button>
+                </FormSelect>
+                <FormButton>Przelicz</FormButton>
             </form>
 
             <>
-                <section className="form__title form--biggerGap">
-                    <div className="form__grid">
+                <StyledForm>
+                    <div>
                         Kwota wynosi:
-                    </div></section>
-                    <Result result={result}/>
+                    </div>
+                </StyledForm>
+                <Result result={result} />
             </>
         </>
     )
