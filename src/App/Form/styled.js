@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const StyledForm = styled.div`
+export const FormInclusion = styled.div`
     display: grid;
     grid-template-columns: 2fr repeat(2, 150px);
     align-content: right;

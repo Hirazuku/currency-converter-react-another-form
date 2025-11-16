@@ -16,10 +16,8 @@ export const Clock = () => {
     const date = useCurrentDate();
 
     return (
-        <>
             <StyledClock>
                 Dzisiaj jest {formatDate(date)}
             </StyledClock>
-        </>
     )
 }

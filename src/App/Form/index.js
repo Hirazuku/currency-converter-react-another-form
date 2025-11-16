@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-import { StyledForm, FormTitle, FormField, FormButton } from "./styled";
+import { FormInclusion, FormTitle, FormField, FormButton } from "./styled";
 
 export const Form = ({ calculateResult, result }) => {
 
@@ -15,9 +15,9 @@ export const Form = ({ calculateResult, result }) => {
 
     return (
         <>
-            <StyledForm>
+            <FormInclusion>
                 Policz wartość:
-            </StyledForm>
+            </FormInclusion>
 
             <FormTitle>Podaj kwotę do przeliczenia w PLN</FormTitle>
 
@@ -41,15 +41,12 @@ export const Form = ({ calculateResult, result }) => {
                 </FormField>
                 <FormButton>Przelicz</FormButton>
             </form>
-
-            <>
-                <StyledForm>
+                <FormInclusion>
                     <div>
                         Kwota wynosi:
                     </div>
-                </StyledForm>
+                </FormInclusion>
                 <Result result={result} />
-            </>
         </>
     )
 
