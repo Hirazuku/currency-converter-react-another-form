@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
 html {
     box-sizing: border-box;
 }
@@ -13,15 +16,15 @@ html {
     align-items: center;
     justify-content: center;
     background-position: center;
-    background-color:rgb(240, 240, 240);
+    background-color:${({ theme }) => theme.colors.white};
     border-radius: 15px;
 }
 
 .body {
     margin: auto;
     max-width: 900px;
-    color: #000000;
-    background-image: url("currency_converter_background.jpg");
+    color: ${({ theme }) => theme.colors.black};
+    background-image: url("https://i.postimg.cc/R049bhH9/pexels-expect-best-323705-blacknwhite.jpg");
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -33,4 +36,4 @@ html {
 .currency__name {
     margin: 10px;
 }
-
+`
