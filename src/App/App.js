@@ -4,7 +4,6 @@ import { currencies } from "./currencies";
 import { Clock } from "./Clock";
 import { Header } from "./Header";
 import { StyledApp } from "./styled";
-import styled, { css } from "styled-components";
 
 function App() {
 

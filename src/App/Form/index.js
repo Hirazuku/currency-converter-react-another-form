@@ -23,11 +23,16 @@ export const Form = ({ calculateResult, result }) => {
 
             <form onSubmit={onFormSubmit}>
                 <FormField
+                    value={amount}
                     type="number"
                     onChange={({ target }) => setAmount(target.value)}
-                    placeholder="Wpisz kwotę: " />
+                    placeholder="Wpisz kwotę: " 
+                    required
+                    step="0.01"
+                    />
+                    
                 <FormField
-                as="select"
+                    as="select"
                     value={currency}
                     onChange={({ target }) => setCurrency(target.value)}
                 >
@@ -40,14 +45,14 @@ export const Form = ({ calculateResult, result }) => {
                     )))}
                 </FormField>
                 <FormButton>Przelicz</FormButton>
-            </form>
+            
                 <FormInclusion>
                     <div>
                         Kwota wynosi:
                     </div>
                 </FormInclusion>
                 <Result result={result} />
+                </form>
         </>
     )
-
 };
