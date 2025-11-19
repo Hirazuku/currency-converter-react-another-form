@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Form } from "./Form";
-import { currencies } from "./currencies";
+import { currencies, newCurrencies } from "./currencies";
 import { Clock } from "./Clock";
 import { Header } from "./Header";
 import { StyledApp } from "./styled";
+import axios from "axios";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Form
           result={result}
           calculateResult={calculateResult}
+          newCurrencies={newCurrencies}
         />
       </StyledApp>
   );

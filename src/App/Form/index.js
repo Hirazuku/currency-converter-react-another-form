@@ -3,10 +3,12 @@ import { currencies } from "../currencies";
 import { Result } from "./Result";
 import { FormInclusion, FormTitle, FormField, FormButton } from "./styled";
 
-export const Form = ({ calculateResult, result }) => {
+export const Form = ({ calculateResult, result, newCurrencies }) => {
 
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState(currencies[0].short);
+
+    newCurrencies();
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -26,11 +28,11 @@ export const Form = ({ calculateResult, result }) => {
                     value={amount}
                     type="number"
                     onChange={({ target }) => setAmount(target.value)}
-                    placeholder="Wpisz kwotę: " 
+                    placeholder="Wpisz kwotę: "
                     required
                     step="0.01"
-                    />
-                    
+                />
+
                 <FormField
                     as="select"
                     value={currency}
@@ -45,14 +47,14 @@ export const Form = ({ calculateResult, result }) => {
                     )))}
                 </FormField>
                 <FormButton>Przelicz</FormButton>
-            
+
                 <FormInclusion>
                     <div>
                         Kwota wynosi:
                     </div>
                 </FormInclusion>
                 <Result result={result} />
-                </form>
+            </form>
         </>
     )
 };
