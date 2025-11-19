@@ -22,12 +22,11 @@ export const newCurrencies = async () => {
           (async () => {
               try {
                   const response = await axios.get("https://api.currencyapi.com/v3/latest?apikey=cur_live_y6Z8Gy5fV32AnKdx5ZHcSuYdrReJqENCTA5T9lFY&currencies=EUR%2CUSD%2CCAD&base_currency=PLN");
-                  console.log(response.data);
+                  console.log(response.data)
+                  return response.data
               }
               catch (error) {
                   console.error(error);
               }
-          })();
-  
-          console.log(Object.keys("CAD"));
+          }) ();
       }

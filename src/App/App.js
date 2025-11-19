@@ -8,6 +8,8 @@ import axios from "axios";
 
 function App() {
 
+  newCurrencies();
+
   const [result, setResult] = useState();
 
   const calculateResult = (currency, amount) => {
@@ -23,17 +25,16 @@ function App() {
   }
 
   return (
-      <StyledApp>
-        <Header
-          title="Zamiana walut"
-        />
-        <Clock />
-        <Form
-          result={result}
-          calculateResult={calculateResult}
-          newCurrencies={newCurrencies}
-        />
-      </StyledApp>
+    <StyledApp>
+      <Header
+        title="Zamiana walut"
+      />
+      <Clock />
+      <Form
+        result={result}
+        calculateResult={calculateResult}
+      />
+    </StyledApp>
   );
 }
 

@@ -3,13 +3,11 @@ import { currencies } from "../currencies";
 import { Result } from "./Result";
 import { FormInclusion, FormTitle, FormField, FormButton } from "./styled";
 
-export const Form = ({ calculateResult, result, newCurrencies }) => {
+export const Form = ({ calculateResult, result }) => {
 
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState(currencies[0].short);
-
-    newCurrencies();
-
+    
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult(currency, amount);
