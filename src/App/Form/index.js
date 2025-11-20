@@ -1,14 +1,20 @@
 import { useState } from 'react';
-import { useRatesData } from "../currencies";
+import { useRatesData } from "../useRatesData";
 import { Result } from "./Result";
 import { FormInclusion, FormTitle, FormField, FormButton, Loading, Failure } from "./styled";
 
 export const Form = () => {
 
+    const ratesData = useRatesData();
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState();
-    const [result, setResult] = useState();
-    const ratesData = useRatesData();
+    const [result, setResult] = useState(
+        {
+            sourceAmount: 1,
+            targetAmount: 0.24,
+            currency: "EUR"
+        });
+    
 
     const calculateResult = (currency, amount) => {
         const rate = ratesData.rates[currency];
@@ -24,6 +30,9 @@ export const Form = () => {
         event.preventDefault();
         calculateResult(currency, amount);
     };
+
+const currencyDay = ratesData.date;
+
     return (
         <>
             <FormInclusion>
@@ -76,6 +85,7 @@ export const Form = () => {
                                     </div>
                                 </FormInclusion>
                                 <Result result={result} />
+                                <p>Dane na temat kursów walut pochodzą z dnia: {currencyDay}</p>
                             </form>
                         </>
                         )

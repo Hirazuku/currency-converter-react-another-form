@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+const url = "https://api.fxratesapi.com/latest?base=pln";
+
 export const useRatesData = () => {
     const [ratesData, setRatesData] = useState({
         state: "loading",
@@ -9,8 +11,8 @@ export const useRatesData = () => {
     useEffect(() => {
         const fetchRates = async () => {
             try {
-                const response = await axios.get("https://api.fxratesapi.com/latest?base=pln");
-                
+                const response = await axios.get(url);
+
                 const { rates, date } = await response.data;
 
                 setRatesData({
