@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { currencies, useRatesData } from "../currencies";
+import { useRatesData } from "../currencies";
 import { Result } from "./Result";
 import { FormInclusion, FormTitle, FormField, FormButton, Loading, Failure } from "./styled";
 
 export const Form = () => {
 
     const [amount, setAmount] = useState("");
-    const [currency, setCurrency] = useState(currencies[0].short);
+    const [currency, setCurrency] = useState();
     const [result, setResult] = useState();
     const ratesData = useRatesData();
 
@@ -60,7 +60,7 @@ export const Form = () => {
                                     value={currency}
                                     onChange={({ target }) => setCurrency(target.value)}
                                 >
-                                    {currencies.map((currency => (
+                                    {Object.keys(ratesData.rates).map(((currency) => (
                                         <option
                                             key={currency}
                                             value={currency}>
