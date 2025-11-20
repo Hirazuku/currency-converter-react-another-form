@@ -8,6 +8,7 @@ export const theme = {
     antiqueBronze: "#6d4d08ac",
     teal: "#008080",
     brightTeal: "#26dfdfff",
+    crimson: "#dc143c",
   },
   breakpoints: {
     mobile: 767

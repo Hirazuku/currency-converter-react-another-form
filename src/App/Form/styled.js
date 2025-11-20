@@ -57,3 +57,11 @@ export const FormButton = styled.button`
         transform: scale(1.1);
     }
 `
+
+export const Loading = styled.p`
+color: ${({ theme }) => theme.colors.teal};
+`
+
+export const Failure = styled.p`
+color: ${({ theme }) => theme.colors.crimson};
+`

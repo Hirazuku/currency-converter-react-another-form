@@ -1,18 +1,32 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { currencies } from "../currencies";
 import { Result } from "./Result";
 import { FormInclusion, FormTitle, FormField, FormButton } from "./styled";
 
-export const Form = ({ calculateResult, result }) => {
+
+
+export const Form = () => {
 
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState(currencies[0].short);
-    
+    const [result, setResult] = useState();
+
+    const calculateResult = (currency, amount) => {
+        const rate = currencies
+            .find(({ short }) => short === currency)
+            .rate;
+
+        setResult({
+            sourceAmount: +amount,
+            targetAmount: amount / rate,
+            currency,
+        });
+    } 
+
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult(currency, amount);
     };
-
     return (
         <>
             <FormInclusion>

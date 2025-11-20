@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 export const currencies = [
     {
@@ -19,14 +20,47 @@ export const currencies = [
 ];
 
 export const newCurrencies = async () => {
-          (async () => {
-              try {
-                  const response = await axios.get("https://api.currencyapi.com/v3/latest?apikey=cur_live_y6Z8Gy5fV32AnKdx5ZHcSuYdrReJqENCTA5T9lFY&currencies=EUR%2CUSD%2CCAD&base_currency=PLN");
-                  console.log(response.data)
-                  return response.data
-              }
-              catch (error) {
-                  console.error(error);
-              }
-          }) ();
-      }
+    {
+        try {
+            console.log("Elo");
+            const response = await axios.get("https//api.exchangeratesapi.io/v1/latest?access_key=8199ecc54444644dd566d6e29654dc8a&symbols=USD,AUD,CAD,PLN,MXN&format=1");
+            console.log(response.data);
+            return response.data;
+        }
+        catch (error) {
+            console.error(error);
+        }
+    };
+}
+
+export const useRatesData = () => {
+    const [ratesData, setRatesData] = useState({
+        state: "loading",
+    });
+
+
+    useEffect(() => {
+        const fetchRates = async () => {
+            try {
+                const response = await axios.get("https//api.exchangeratesapi.io/v1/latest?access_key=8199ecc54444644dd566d6e29654dc8a&symbols=USD,AUD,CAD,PLN,MXN&format=1");
+                
+                const { rates, date } = await response.data;
+
+                setRatesData({
+                    state: "success",
+                    rates,
+                    date,
+                });
+
+            }
+            catch {
+                setRatesData({
+                    state: "error",
+                });
+            }
+        }
+        setTimeout(fetchRates, 1000);
+    }, []);
+
+    return ratesData;
+}
