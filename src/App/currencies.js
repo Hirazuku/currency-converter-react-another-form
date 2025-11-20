@@ -51,7 +51,6 @@ export const useRatesData = () => {
                     rates,
                     date,
                 });
-
             }
             catch {
                 setRatesData({
