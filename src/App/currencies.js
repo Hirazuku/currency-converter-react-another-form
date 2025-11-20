@@ -6,7 +6,6 @@ export const useRatesData = () => {
         state: "loading",
     });
 
-
     useEffect(() => {
         const fetchRates = async () => {
             try {
