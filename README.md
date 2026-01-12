@@ -1,8 +1,10 @@
+## Demo
+
 Link for my website: https://hirazuku.github.io/currency-converter-react-another-form/
 
-Description
+## Description
 
-This app was built for writing down your own goals, whether they're long or short term. You can delete those, who are already done or just mark them and hide. It was built using React for more simple syntax and more user-friendly interface. You can use it freely, even for shopping list etc. Enjoy
+This app, built using React, allows you to convert PLN amounts to a currency selected from a list retrieved from the API. This ensures that exchange rates are always up-to-date.
 
 # Getting Started with Create React App
 
