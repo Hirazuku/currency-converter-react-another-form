@@ -1,6 +1,6 @@
 ## Demo
 
-Link for my website: https://hirazuku.github.io/currency-converter-react-another-form/
+Link for my website: https://mkowalczyk-dev.github.io/currency-converter-react-another-form/
 
 ![animation](public/Animation.gif)
 
